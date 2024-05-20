@@ -11,8 +11,7 @@ type Props = {
   film: FilmItem;
 };
 
-const FilmListItem: FC<Props> = ({ film }) => {
-  const { title, rating, imdb_id } = film;
+const FilmListItem: FC<Props> = ({ film: { title, rating, imdb_id } }) => {
   return (
     <article>
       <h2>{title}</h2>
