@@ -1,5 +1,5 @@
+import FilmListItem, { FilmItem } from 'components/FilmListItem/FilmListItem';
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import useFilmsStore from 'stores/films.store';
 
 const HomePage = () => {
@@ -12,22 +12,20 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      <>{console.log('films,error,loading', films, error, loading)}</>
-      Home
-      {!loading &&
-        !error &&
-        films.length &&
-        films.slice(0, 10).map((film) => (
-          <div>
-            {film.title}
-            {film.rating}
-            <Link to='/details' state={{ imdbId: film.imdb_id }}>
-              lesgo
-            </Link>
-          </div>
-        ))}
-    </div>
+    <section>
+      <h1>Top 10 films.</h1>
+      {!loading && !error && films.length ? (
+        <ol>
+          {films.slice(0, 10).map((film: FilmItem) => (
+            <li key={film.imdb_id}>
+              <FilmListItem film={film} />
+            </li>
+          ))}
+        </ol>
+      ) : null}
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+    </section>
   );
 };
 
