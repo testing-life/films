@@ -4,13 +4,14 @@ import { Route, Routes } from 'react-router';
 import HomePage from 'pages/Home/HomePage';
 import DetailsPage from 'pages/Details/DetailsPage';
 import NoMatchPage from 'pages/NoMatch/NoMatchPage';
+import { DETAILS, HOME, NOMATCH } from 'consts/routes';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/details' element={<DetailsPage />} />
-      <Route path='*' element={<NoMatchPage />} />
+      <Route path={HOME} element={<HomePage />} />
+      <Route path={DETAILS} element={<DetailsPage />} />
+      <Route path={NOMATCH} element={<NoMatchPage />} />
     </Routes>
   );
 }

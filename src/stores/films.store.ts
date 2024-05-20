@@ -1,6 +1,10 @@
 import axios from 'axios';
-import { FilmsByRatingUrl } from 'consts/apiUrls';
-import { FilmsFetchHeaders, FilmsFetchResponse } from 'utils/filmFetching';
+import { FilmDetailsUrl, FilmsByRatingUrl } from 'consts/apiUrls';
+import {
+  FilmDetailsResponse,
+  FilmsFetchHeaders,
+  FilmsFetchResponse
+} from 'utils/filmFetching';
 import { create } from 'zustand';
 
 type Film = {
@@ -11,17 +15,21 @@ type Film = {
 
 type State = {
   films: Film[];
+  filmDetails: Record<string, any> | undefined;
   loading: boolean;
   error: string;
 };
+
 type Action = {
   fetchFilms: () => void;
+  fetchFilmDetails: (imdbId: string) => void;
 };
 
 const useFilmsStore = create<State & Action>((set) => ({
   films: [],
   loading: false,
   error: '',
+  filmDetails: undefined,
   fetchFilms: async () => {
     set({ loading: true, error: '' });
     const response = await axios
@@ -29,6 +37,15 @@ const useFilmsStore = create<State & Action>((set) => ({
       .catch((error) => set({ error: error.message }));
     if (response) {
       set({ films: response.data.results, loading: false });
+    }
+  },
+  fetchFilmDetails: async (imdbId: string) => {
+    set({ loading: true, error: '' });
+    const response = await axios
+      .get<FilmDetailsResponse>(`${FilmDetailsUrl}${imdbId}`, FilmsFetchHeaders)
+      .catch((error) => set({ error: error.message }));
+    if (response) {
+      set({ filmDetails: response.data.results, loading: false });
     }
   }
 }));
