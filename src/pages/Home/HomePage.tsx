@@ -1,4 +1,5 @@
 import FilmListItem, { FilmItem } from 'components/FilmListItem/FilmListItem';
+import Spinner from 'components/Spinner/Spinner';
 import React, { useEffect } from 'react';
 import useFilmsStore from 'stores/films.store';
 
@@ -23,7 +24,7 @@ const HomePage = () => {
           ))}
         </ol>
       ) : null}
-      {loading && <p>Loading...</p>}
+      {loading && !error && <Spinner label='Loading films' />}
       {error && <p>{error}</p>}
     </section>
   );

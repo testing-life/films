@@ -1,6 +1,7 @@
 import FilmDetails, {
   FilmItemDetails
 } from 'components/FilmDetails/FilmDetails';
+import Spinner from 'components/Spinner/Spinner';
 import { HOME } from 'consts/routes';
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
@@ -32,6 +33,7 @@ const DetailsPage = () => {
           }
         />
       )}
+      {loading && !error && <Spinner label='Loading film details' />}
       {error && <p>{error}</p>}
     </section>
   );
