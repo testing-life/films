@@ -1,0 +1,7 @@
+.film-details {
+}
+
+.film-details__meta {
+  display: flex;
+  gap: 2.6rem;
+}

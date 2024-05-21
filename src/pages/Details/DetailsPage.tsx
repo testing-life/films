@@ -2,7 +2,6 @@ import FilmDetails, {
   FilmItemDetails
 } from 'components/FilmDetails/FilmDetails';
 import Spinner from 'components/Spinner/Spinner';
-import Heading from 'components/common/Heading/Heading';
 import { HOME } from 'consts/routes';
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
@@ -25,7 +24,6 @@ const DetailsPage = () => {
     <section>
       <header>
         <Link to={HOME}>Home</Link>
-        <Heading text='Film Details' />
       </header>
       {!loading && filmDetails && (
         <FilmDetails
