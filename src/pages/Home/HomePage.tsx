@@ -1,5 +1,6 @@
 import FilmListItem, { FilmItem } from 'components/FilmListItem/FilmListItem';
 import Spinner from 'components/Spinner/Spinner';
+import Heading from 'components/common/Heading/Heading';
 import React, { useEffect } from 'react';
 import useFilmsStore from 'stores/films.store';
 
@@ -14,7 +15,7 @@ const HomePage = () => {
 
   return (
     <section>
-      <h1>Top 10 films.</h1>
+      <Heading text='Top 10 films.' />
       {!loading && !error && films.length ? (
         <ol>
           {films.slice(0, 10).map((film: FilmItem) => (

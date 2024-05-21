@@ -2,7 +2,7 @@
   background: var(--page-background);
   color: var(--text-colour);
   height: 100vh;
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-2);
 }
 
 [data-theme] a {

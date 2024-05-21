@@ -1,0 +1,19 @@
+[data-theme='default'] {
+  --page-background: var(--dark-exquisite-eggplant);
+  --text-colour: var(--natural-choice);
+  --link-colour: var(--butternut-squash);
+  --link-interacted-colour: var(--natural-choice);
+  --button-bg: var(--natural-choice);
+  --button-interacted-colour: var(--butternut-squash);
+  --button-interacted-bg: var(--terra-pin);
+  --highlight-bg: var(--june-bud);
+  --highlight-text: var(--terra-pin);
+  --gradient-1: var(--june-bud);
+  --gradient-2: var(--butternut-squash);
+  --h1-font-size: var(--font-size-4);
+  --h2-font-size: var(--font-size-3);
+  --h3-font-size: var(--font-size-2);
+  --heading-weight: var(--extrabold-weight);
+  --rating-text-shadow: var(--dark-exquisite-eggplant) 0.1rem 0.1rem,
+    var(--terra-pin) 0.2rem 0.2rem;
+}
