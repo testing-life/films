@@ -1,6 +1,7 @@
+import PillList from 'components/PillList/PillList';
 import React, { FC } from 'react';
 
-type Genre = { id: number; genre: string };
+export type Genre = { id: number; genre: string };
 
 export type FilmItemDetails = {
   title: string;
@@ -11,6 +12,7 @@ export type FilmItemDetails = {
   description: string;
   plot: string;
   gen: Genre[];
+  trailer: string;
 };
 
 export type Props = {
@@ -18,23 +20,41 @@ export type Props = {
 };
 
 const FilmDetails: FC<Props> = ({ details }) => {
-  const { title, rating, year, image_url, banner, description, plot, gen } =
-    details;
+  const {
+    title,
+    rating,
+    banner,
+    year,
+    image_url,
+    description,
+    trailer,
+    plot,
+    gen
+  } = details;
   return (
     <article>
+      <>{console.log('details', details)}</>
       <h2>{title}</h2>
-      <p>Released: {year}</p>
-      <p>Rating: {rating}</p>
-      {gen.length ? (
-        <ul>
-          {gen.map((genre: Genre) => (
-            <li key={genre.id}>{genre.genre}</li>
-          ))}
-        </ul>
-      ) : null}
       <img src={image_url} alt='' />
-      <p>{description}</p>
-      <p>{plot}</p>
+      <a target='_blank' href={trailer} rel='noreferrer'>
+        <img
+          src={banner}
+          alt={`Watch ${title} trailer on YouTube, opens a new tab`}
+        />
+      </a>
+      <PillList labels={gen} />
+      <dl>
+        <dt>Released</dt>
+        <dd>{year}</dd>
+        <dt>Rating</dt>
+        <dd>{rating}</dd>
+        <dt>Plot</dt>
+        <dd>{plot}</dd>
+      </dl>
+      <details>
+        <summary>{title} description</summary>
+        <p>{description}</p>
+      </details>
     </article>
   );
 };

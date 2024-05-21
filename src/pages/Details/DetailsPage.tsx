@@ -23,7 +23,7 @@ const DetailsPage = () => {
     <section>
       <header>
         <Link to={HOME}>Home</Link>
-        <h1>DetailsPage</h1>
+        <h1>Film Details</h1>
       </header>
       {!loading && filmDetails && (
         <FilmDetails
