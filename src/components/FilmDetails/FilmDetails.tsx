@@ -33,7 +33,6 @@ const FilmDetails: FC<Props> = ({ details }) => {
   } = details;
   return (
     <article>
-      <>{console.log('details', details)}</>
       <h2>{title}</h2>
       <img src={image_url} alt='' />
       <a target='_blank' href={trailer} rel='noreferrer'>
