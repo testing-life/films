@@ -1,0 +1,18 @@
+:root {
+  --exquisite-eggplant: rgb(50, 1, 47);
+  --dark-exquisite-eggplant: rgb(24, 0, 23);
+  --terra-pin: rgb(82, 76, 66);
+  --natural-choice: rgb(226, 223, 208);
+  --butternut-squash: rgb(249, 115, 0);
+}
+
+[data-theme='default'] {
+  --page-background: var(--dark-exquisite-eggplant);
+  --text-colour: var(--natural-choice);
+  --link-colour: var(--butternut-squash);
+  --link-interacted-colour: var(--natural-choice);
+  --button-bg: var(--natural-choice);
+  --button-interacted-colour: var(--butternut-squash);
+  --button-interacted-bg: var(--terra-pin);
+  --highlight: var(--butternut-squash);
+}

@@ -8,11 +8,13 @@ import { DETAILS, HOME, NOMATCH } from 'consts/routes';
 
 function App() {
   return (
-    <Routes>
-      <Route path={HOME} element={<HomePage />} />
-      <Route path={DETAILS} element={<DetailsPage />} />
-      <Route path={NOMATCH} element={<NoMatchPage />} />
-    </Routes>
+    <div data-theme='default'>
+      <Routes>
+        <Route path={HOME} element={<HomePage />} />
+        <Route path={DETAILS} element={<DetailsPage />} />
+        <Route path={NOMATCH} element={<NoMatchPage />} />
+      </Routes>
+    </div>
   );
 }
 

@@ -1,8 +1,14 @@
+:root {
+  --default-weight: 400;
+  --semibold-weight: 600;
+  --extrabold-weight: 800;
+}
+
 html {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: var(--default-weight);
   font-style: normal;
+  font-size: 62.5%;
+  line-height: 27px;
 }
-
-/* 400, 600, 800 */
