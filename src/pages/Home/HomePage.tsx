@@ -19,7 +19,7 @@ const HomePage = () => {
       {!loading && !error && films.length ? (
         <ol>
           {films.slice(0, 10).map((film: FilmItem) => (
-            <li key={film.imdb_id}>
+            <li className='-separated-list-item' key={film.imdb_id}>
               <FilmListItem film={film} />
             </li>
           ))}

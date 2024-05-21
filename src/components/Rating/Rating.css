@@ -5,14 +5,13 @@
     var(--gradient-1),
     var(--gradient-2)
   );
-  color: var(--highlight-text);
   font-weight: var(--extrabold-weight);
-  border-radius: 1.6rem;
-  padding: 1.2rem;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
   text-shadow: var(--rating-text-shadow);
-  display: flex;
-  inline-size: 7rem;
+  display: inline-flex;
+  inline-size: 3.5rem;
+  box-shadow: var(--terra-pin) 0.1rem -0.1rem 0.1rem 0.1rem;
 }

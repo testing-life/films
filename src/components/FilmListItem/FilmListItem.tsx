@@ -2,6 +2,7 @@ import Rating from 'components/Rating/Rating';
 import Heading from 'components/common/Heading/Heading';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import './FilmListItem.css';
 
 export type FilmItem = {
   title: string;
@@ -15,9 +16,12 @@ type Props = {
 
 const FilmListItem: FC<Props> = ({ film: { title, rating, imdb_id } }) => {
   return (
-    <article>
+    <article className='film-list-item'>
       <Heading renderAs='h2' text={title} />
-      <Rating value={rating} />
+      <p className='film-list-item__rating'>
+        Rating: <Rating value={rating} />
+      </p>
+
       <Link to='/details' state={{ imdbId: imdb_id }}>
         More about {title}
       </Link>

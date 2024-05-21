@@ -1,0 +1,6 @@
+.film-list-item__rating {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-block-end: 1rem;
+}

@@ -1,0 +1,5 @@
+.-separated-list-item:not(:last-child) {
+  margin-block-end: 1.6rem;
+  padding-block-end: 2.4rem;
+  border-block-end: 0.1rem solid var(--separator-colour);
+}
