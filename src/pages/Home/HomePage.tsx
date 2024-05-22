@@ -27,7 +27,6 @@ const HomePage = () => {
       ) : null}
       {loading && !error && <Spinner label='Loading films' />}
       {error && <p className='-is-error'>{error}</p>}
-      <Spinner label='Loading films' />
     </section>
   );
 };
