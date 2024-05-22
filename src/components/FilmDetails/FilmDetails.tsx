@@ -4,6 +4,7 @@ import GlossaryEntry from 'components/common/GlossaryEntry/GlossaryEntry';
 import Heading from 'components/common/Heading/Heading';
 import React, { FC } from 'react';
 import './FilmDetails.css';
+import Details from 'components/common/Details/Details';
 
 export type Genre = { id: number; genre: string };
 
@@ -28,15 +29,15 @@ const FilmDetails: FC<Props> = ({ details }) => {
   return (
     <article className='film-details'>
       <Heading text={title} />
-      <div className='film-details__meta'>
+      <div className='film-details__meta -mb-24'>
         <div className='film-details__col'>
           <img className='film-details__meta-image' src={image_url} alt='' />
         </div>
         <div className='film-details__col'>
-          <div className='mb-24'>
+          <div className='-mb-24'>
             <PillList labels={gen} />
           </div>
-          <div className='mb-24'>
+          <div className='-mb-24'>
             <Glossary>
               <GlossaryEntry term='Released' definition={year} />
               <GlossaryEntry term='Rating' definition={rating} />
@@ -48,11 +49,7 @@ const FilmDetails: FC<Props> = ({ details }) => {
           </a>
         </div>
       </div>
-
-      <details>
-        <summary>{title} description</summary>
-        <p>{description}</p>
-      </details>
+      <Details content={description} title={`${title} description`} />
     </article>
   );
 };

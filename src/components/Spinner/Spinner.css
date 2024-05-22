@@ -4,14 +4,10 @@
   align-items: center;
 }
 
-.spinner__label {
-  background: lightblue;
-}
-
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 2px solid goldenrod;
+  inline-size: 4.8rem;
+  block-size: 4.8rem;
+  border: 0.2rem solid var(--spinner-border);
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -24,20 +20,20 @@
   content: '';
   box-sizing: border-box;
   position: absolute;
-  left: 0;
-  top: 0;
-  background: green;
-  width: 6px;
-  height: 6px;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  background: var(--spinner-detail);
+  inline-size: 0.6rem;
+  block-size: 0.6rem;
   transform: translate(150%, 150%);
   border-radius: 50%;
 }
 
 .loader::before {
-  left: auto;
-  top: auto;
-  right: 0;
-  bottom: 0;
+  inset-inline-start: auto;
+  inset-block-start: auto;
+  inset-inline-end: 0;
+  inset-block-end: 0;
   transform: translate(-150%, -150%);
 }
 

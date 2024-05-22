@@ -3,8 +3,10 @@
   color: var(--text-colour);
   font-size: var(--font-size-1);
   padding: 1.6rem;
-  @media (min-width: 778px) {
+  @media (min-width: 77.8rem) {
     padding: 3.6rem;
+    max-width: 113.6rem;
+    margin: 0 auto;
   }
 }
 

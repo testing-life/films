@@ -16,7 +16,13 @@
   --h2-font-size: var(--font-size-2);
   --h3-font-size: var(--font-size-1);
   --heading-weight: var(--extrabold-weight);
-
+  --details-summary-bg: var(--light-exquisite-eggplant);
+  --details-content-bg: var(--terra-pin);
+  --details-marker-colour: var(--butternut-squash);
+  --details-marker-active-colour: var(--terra-pin);
+  --alert: var(--fiery-future);
+  --spinner-detail: var(--june-bud);
+  --spinner-border: var(--terra-pin);
   @media (min-width: 778px) {
     --h1-font-size: var(--font-size-4);
     --h2-font-size: var(--font-size-3);

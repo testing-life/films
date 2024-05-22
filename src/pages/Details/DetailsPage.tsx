@@ -33,7 +33,7 @@ const DetailsPage = () => {
         />
       )}
       {loading && !error && <Spinner label='Loading film details' />}
-      {error && <p>{error}</p>}
+      {error && <p className='-is-error'>{error}</p>}
     </section>
   );
 };
