@@ -8,6 +8,10 @@
   }
 }
 
+html:has([data-theme]) {
+  background: var(--page-background);
+}
+
 [data-theme] a {
   color: var(--link-colour);
   text-decoration: underline 0.15rem var(--link-colour);

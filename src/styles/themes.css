@@ -1,4 +1,5 @@
-[data-theme='default'] {
+:root:has([data-theme='default']) {
+  --page-background: var(--dark-exquisite-eggplant);
   --page-background: var(--dark-exquisite-eggplant);
   --text-colour: var(--natural-choice);
   --link-colour: var(--butternut-squash);

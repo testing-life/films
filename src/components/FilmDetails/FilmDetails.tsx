@@ -11,7 +11,6 @@ export type FilmItemDetails = {
   title: string;
   rating: number;
   year: string;
-  banner: string;
   image_url: string;
   description: string;
   plot: string;
@@ -24,39 +23,31 @@ export type Props = {
 };
 
 const FilmDetails: FC<Props> = ({ details }) => {
-  const {
-    title,
-    rating,
-    banner,
-    year,
-    image_url,
-    description,
-    trailer,
-    plot,
-    gen
-  } = details;
+  const { title, rating, year, image_url, description, trailer, plot, gen } =
+    details;
   return (
     <article className='film-details'>
       <Heading text={title} />
       <div className='film-details__meta'>
         <div className='film-details__col'>
-          <img className='film-details__header-image' src={image_url} alt='' />
+          <img className='film-details__meta-image' src={image_url} alt='' />
         </div>
         <div className='film-details__col'>
-          <PillList labels={gen} />
-          <Glossary>
-            <GlossaryEntry term='Released' definition={year} />
-            <GlossaryEntry term='Rating' definition={rating} />
-            <GlossaryEntry term='Plot' definition={plot} />
-          </Glossary>
+          <div className='mb-24'>
+            <PillList labels={gen} />
+          </div>
+          <div className='mb-24'>
+            <Glossary>
+              <GlossaryEntry term='Released' definition={year} />
+              <GlossaryEntry term='Rating' definition={rating} />
+              <GlossaryEntry term='Plot' definition={plot} />
+            </Glossary>
+          </div>
+          <a target='_blank' href={trailer} rel='noreferrer'>
+            Watch {title} trailer on YouTube
+          </a>
         </div>
       </div>
-      <a target='_blank' href={trailer} rel='noreferrer'>
-        <img
-          src={banner}
-          alt={`Watch ${title} trailer on YouTube, opens a new tab`}
-        />
-      </a>
 
       <details>
         <summary>{title} description</summary>
