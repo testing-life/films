@@ -1,0 +1,15 @@
+.-separated-list-item:not(:last-child) {
+  margin-block-end: 1.6rem;
+  padding-block-end: 2.4rem;
+  border-block-end: 0.1rem solid var(--separator-colour);
+}
+
+.-mb-24 {
+  margin-block-end: 2.4rem;
+}
+
+.-is-error {
+  color: var(--alert);
+  font-weight: var(--extrabold-weight);
+  font-size: var(--font-size-2);
+}

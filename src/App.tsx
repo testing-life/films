@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router';
+import HomePage from 'pages/Home/HomePage';
+import DetailsPage from 'pages/Details/DetailsPage';
+import NoMatchPage from 'pages/NoMatch/NoMatchPage';
+import { DETAILS, HOME, NOMATCH } from 'consts/routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-theme='default'>
+      <Routes>
+        <Route path={HOME} element={<HomePage />} />
+        <Route path={DETAILS} element={<DetailsPage />} />
+        <Route path={NOMATCH} element={<NoMatchPage />} />
+      </Routes>
     </div>
   );
 }

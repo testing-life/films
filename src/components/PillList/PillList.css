@@ -1,0 +1,10 @@
+.pill-list {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.pill-list__item {
+  list-style-type: none;
+}

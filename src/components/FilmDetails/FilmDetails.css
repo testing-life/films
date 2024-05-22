@@ -1,0 +1,27 @@
+.film-details {
+}
+
+.film-details__meta {
+  display: flex;
+  gap: 2.6rem;
+}
+
+.film-details__meta-image {
+  min-inline-size: 17rem;
+}
+
+.film-details__video-link {
+  position: relative;
+}
+
+.film-details__video-link:before {
+  content: 'Watch trailer on YouTube';
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  z-index: 1;
+  background-color: black;
+  display: flex;
+}
