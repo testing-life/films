@@ -23,6 +23,7 @@
   --alert: var(--fiery-future);
   --spinner-detail: var(--june-bud);
   --spinner-border: var(--terra-pin);
+  --rating-colour: var(--june-bud);
   @media (min-width: 77.8rem) {
     --h1-font-size: var(--font-size-4);
     --h2-font-size: var(--font-size-3);
