@@ -3,6 +3,7 @@ import Heading from 'components/common/Heading/Heading';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import './FilmListItem.css';
+import { DETAILS } from 'consts/routes';
 
 export type FilmItem = {
   title: string;
@@ -22,7 +23,7 @@ const FilmListItem: FC<Props> = ({ film: { title, rating, imdb_id } }) => {
         Rating: <Rating value={rating} />
       </p>
 
-      <Link to='/details' state={{ imdbId: imdb_id }}>
+      <Link to={DETAILS} state={{ imdbId: imdb_id }}>
         More about {title}
       </Link>
     </article>
