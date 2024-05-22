@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Details from './Details'; // Adjust the import path as necessary
+import Details from './Details';
 
 describe('Details Component', () => {
   it('renders the details element', () => {
