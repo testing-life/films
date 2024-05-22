@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -29,18 +29,24 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+**Note: To run locally, an API key will be required**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Assorted Notes
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Due to the size it wasn't necessary, but normally I'd split it into Feature folders, containing all necessary item for a specific feature plus a Common folder for some atomic components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Some components could be turned into a more versatile version (`FilmList`), which would be more reusable.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Every feature branch would be strictly limited to this feature, rather than ninja-commits with other items, as noticed during work :)
 
-## Learn More
+For a bigger app all of the decisions,naming conventions, solutions, tools, approaches would have to be discussed and agreed on
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Given more time it'd be helpful to add line heights to match modular font scale and a proper resuable grid layout, either via css classes or maybe layout components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Some naming could improvd, such a removal of redundant parts - `--extrabold-weight` when naming a font weight variable
+
+I quite enjoyed playing around with Zustand - it feels much nicer than bigger, more boilerplate heavy alternatives as well as providing some skeleton setup for theming with just css properties
+
+Tests for components would at least include a happy path scenario, malformed data scenario and no data scenario. Additionally, a test would be needed for any internal logic and user interactions. For the store, requests would have to be ideally mocked and checked for error handling.
+
+I'm quite chuffed with this `filmDetails as Pick<typeof filmDetails, keyof FilmItemDetails>` line, I think it's quite clever, even I say so myself :)
