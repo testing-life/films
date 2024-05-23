@@ -43,9 +43,12 @@ For a bigger app all of the decisions,naming conventions, solutions, tools, appr
 
 Given more time it'd be helpful to add line heights to match modular font scale and a proper resuable grid layout, either via css classes or maybe layout components
 
-Some naming could improvd, such a removal of redundant parts - `--extrabold-weight` when naming a font weight variable
+Some naming could improved, such a removal of redundant parts - `--extrabold-weight` when naming a font weight variable
+
+One feature that would be lovely is to display a film poster on the list page. The API used does not expose this property in the endpoint returning films by rating, but it does when requesting the details of a specific film. This list has only 10 items, so it would be possible to query for the list and then, using the ids, collect requests for details in a `Promise.all()`. The result could be put in a property in the store and that would eliminate the need for another request when navigating to the details page. However, this solution wouldn't scale, in my opinion. This case would be a prime candidate for a discussion with backend developers to adjust the first endpoint. Alternatively, one could use GrapQL for a more granular request from the second endpoint.  
 
 I quite enjoyed playing around with Zustand - it feels much nicer than bigger, more boilerplate heavy alternatives as well as providing some skeleton setup for theming with just css properties
+
 
 Tests for components would at least include a happy path scenario, malformed data scenario and no data scenario. Additionally, a test would be needed for any internal logic and user interactions. For the store, requests would have to be ideally mocked and checked for error handling.
 
